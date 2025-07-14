@@ -127,7 +127,7 @@ button:disabled{
   display: inline;
 }
 
-.loading{
+/* .loading{
   display: none;
   width: 20px;
   height: 20px;
@@ -141,4 +141,4 @@ button:disabled{
   to{
     transform: rotate(360deg);
   }
-}
+} */

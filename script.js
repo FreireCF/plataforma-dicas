@@ -51,15 +51,15 @@ const sendForm = async (event) =>{
     return
   }
 
-  askButton.disabled = true
-  askButton.querySelector('.button-text').style.display = 'none'
-  askButton.querySelector('.loading').style.display = 'inline-block'
+  askButton.disabled = false
+  askButton.textContent = 'Pergutando..'
+  // askButton.classList.add('loading')
 
-  setTimeout(() => {
-    askButton.disabled = false
-    askButton.querySelector('.button-text').style.display = 'inline'
-    askButton.querySelector('.loading').style.display = 'none'
-  }, 3000)
+  // setTimeout(() => {
+  //   askButton.disabled = false
+  //   askButton.querySelector('.button-text').style.display = 'inline'
+  //   askButton.querySelector('.loading').style.display = 'none'
+  // }, 3000)
 
   try{
     //perguntar para a ia
@@ -69,10 +69,9 @@ const sendForm = async (event) =>{
   } catch(error){
     console.log('Erro: ',error)
   } finally{
-    askButton.disabled = false
+    askButton.disabled = true
     askButton.textContent = "Perguntar"
-    askButton.classList.remove('loading')
-
+    // askButton.classList.remove('loading')
   }
 }
 form.addEventListener('submit', sendForm)
